@@ -1,0 +1,32 @@
+var sessions = {
+    sessionId:"",
+    status:0,
+    value:[
+        {
+            capabilities:{
+                acceptSslCerts:true,
+                applicationCacheEnabled:false,
+                browserConnectionEnabled:false,
+                browserName:"chrome",
+                chrome:{
+
+                },
+                cssSelectorsEnabled:true,
+                databaseEnabled:false,
+                handlesAlerts:true,
+                hasTouchScreen:false,
+                javascriptEnabled:true,
+                locationContextEnabled:true,
+                mobileEmulationEnabled:false,
+                nativeEvents:true,
+                platform:"ANDROID",
+                rotatable:false,
+                takesHeapSnapshot:true,
+                takesScreenshot:true,
+                version:"30.0.0.0",
+                webStorageEnabled:true
+            },
+            sessionId:"ba460e15499f6317ec1822db03236378"
+        }
+    ]
+}
