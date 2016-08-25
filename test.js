@@ -38,11 +38,32 @@ client
 	// .openNotifications()
 	// .isAppInstalled('us.originally.hoicard.debug')
 	// .rotate(114, 198)
-	// .touchClick({})
+	// deprecated, use touchPerform
+	// .touchClick('us.originally.hoicard.debug:id/btn_goto_start_activity')
+	// .startActivity({
+	//     appPackage: ' us.originally.hoicard.debug',
+	//     appActivity: 'us.originally.hoicard.controllers.LandingActivity '
+	// })
+	// .timeouts('implicit', 500)
+	.startActivity({
+	    appPackage: 'us.originally.hoicard.debug',
+	    appActivity: 'us.originally.hoicard.controllers.StartActivityRestaurant'
+	})
+	.touchPerform({
+		action: 'tap',
+		options: {
+			el: 'us.originally.hoicard.debug:id/btn_goto_start_activity', // json web element was queried before
+			// x: 10,   // x offset
+			// y: 20,   // y offset
+			count: 1 // number of touches
+		}
+	})
 	// .performTouchAction(TouchAction().press(el0).moveTo(el1).release())
 	// .execute('mobile: tap', [], function(err){console.log(err);})
 	// .currentActivity().then(function() {
 	// 	console.log(activity); // returns android activity information
 	// })
-	.closeApp()
+	.execute({
+		cmd: 'shutdown'
+	})
 	;

@@ -1,0 +1,78 @@
+> info: [debug] App already signed.
+> info: [debug] Zip-aligning D:\work-station\webdriverio-test\latest_staging.apk
+> info: [debug] Checking whether zipalign is present
+> info: [debug] Using zipalign from D:\program\android\sdk\build-tools\24.0.1\zipalign.exe
+> info: [debug] Zip-aligning apk.
+> info: [debug] executing cmd: D:\program\android\sdk\build-tools\24.0.1\zipalign.exe -f 4 D:\work-station\webdriverio-test\latest_staging.apk C:\Users\HOANGA~1\AppData\Local\Temp\116725-12440-saud9p\appium.tmp
+> info: [debug] MD5 for app is 086866ab3d2f4208b858416bb6f66a1b
+> info: [debug] executing cmd: D:\program\android\sdk\platform-tools\adb.exe -s 03381818297500000000 shell "ls /data/local/tmp/086866ab3d2f4208b858416bb6f66a1b.apk"
+> info: [debug] Getting install status for us.originally.hoicard.debug
+> info: [debug] Getting device API level
+> info: [debug] executing cmd: D:\program\android\sdk\platform-tools\adb.exe -s 03381818297500000000 shell "getprop ro.build.version.sdk"
+> info: [debug] Device is at API Level 19
+> info: [debug] executing cmd: D:\program\android\sdk\platform-tools\adb.exe -s 03381818297500000000 shell "pm list packages -3 us.originally.hoicard.debug"
+> info: [debug] App is installed
+> info: [debug] Forwarding system:4724 to device:4724
+> info: [debug] executing cmd: D:\program\android\sdk\platform-tools\adb.exe -s 03381818297500000000 forward tcp:4724 tcp:4724
+> info: [debug] Pushing appium bootstrap to device...
+> info: [debug] executing cmd: D:\program\android\sdk\platform-tools\adb.exe -s 03381818297500000000 push "D:\\program\\Appium\\node_modules\\appium\\build\\android_bootstrap\\AppiumBootstrap.jar" /data/local/tmp/
+> info: [debug] Pushing settings apk to device...
+> info: [debug] executing cmd: D:\program\android\sdk\platform-tools\adb.exe -s 03381818297500000000 install "D:\program\Appium\node_modules\appium\build\settings_apk\settings_apk-debug.apk"
+> info: [debug] Pushing unlock helper app to device...
+> info: [debug] executing cmd: D:\program\android\sdk\platform-tools\adb.exe -s 03381818297500000000 install "D:\program\Appium\node_modules\appium\build\unlock_apk\unlock_apk-debug.apk"
+> info: Starting App
+> info: [debug] Attempting to kill all 'uiautomator' processes
+> info: [debug] Getting all processes with 'uiautomator'
+> info: [debug] executing cmd: D:\program\android\sdk\platform-tools\adb.exe -s 03381818297500000000 shell "ps 'uiautomator'"
+> info: [debug] No matching processes found
+> info: [debug] Running bootstrap
+> info: [debug] spawning: D:\program\android\sdk\platform-tools\adb.exe -s 03381818297500000000 shell uiautomator runtest AppiumBootstrap.jar -c io.appium.android.bootstrap.Bootstrap -e pkg us.originally.hoicard.debug -e disableAndroidWatchers false
+> info: [debug] [UIAUTOMATOR STDOUT] INSTRUMENTATION_STATUS: numtests=1
+> info: [debug] [UIAUTOMATOR STDOUT] INSTRUMENTATION_STATUS: stream=
+> info: [debug] [UIAUTOMATOR STDOUT] io.appium.android.bootstrap.Bootstrap:
+> info: [debug] [UIAUTOMATOR STDOUT] INSTRUMENTATION_STATUS: id=UiAutomatorTestRunner
+> info: [debug] [UIAUTOMATOR STDOUT] INSTRUMENTATION_STATUS: test=testRunServer
+> info: [debug] [UIAUTOMATOR STDOUT] INSTRUMENTATION_STATUS: class=io.appium.android.bootstrap.Bootstrap
+> info: [debug] [UIAUTOMATOR STDOUT] INSTRUMENTATION_STATUS: current=1
+> info: [debug] [UIAUTOMATOR STDOUT] INSTRUMENTATION_STATUS_CODE: 1
+> info: [debug] [BOOTSTRAP] [debug] Socket opened on port 4724
+> info: [debug] [BOOTSTRAP] [debug] Appium Socket Server Ready
+> info: [debug] [BOOTSTRAP] [debug] Loading json...
+> info: [debug] Waking up device if it's not alive
+> info: [debug] Pushing command to appium work queue: ["wake",{}]
+> info: [debug] [BOOTSTRAP] [debug] json loading complete.
+> info: [debug] [BOOTSTRAP] [debug] Registered crash watchers.
+> info: [debug] [BOOTSTRAP] [debug] Client connected
+> info: [debug] [BOOTSTRAP] [debug] Got data from client: {"cmd":"action","action":"wake","params":{}}
+> info: [debug] [BOOTSTRAP] [debug] Got command of type ACTION
+> info: [debug] executing cmd: D:\program\android\sdk\platform-tools\adb.exe -s 03381818297500000000 shell "dumpsys window"
+> info: [debug] [BOOTSTRAP] [debug] Got command action: wake
+> info: [debug] [BOOTSTRAP] [debug] Returning result: {"value":true,"status":0}
+> info: [debug] Screen already unlocked, continuing.
+> info: [debug] Pushing command to appium work queue: ["getDataDir",{}]
+> info: [debug] [BOOTSTRAP] [debug] Got data from client: {"cmd":"action","action":"getDataDir","params":{}}
+> info: [debug] [BOOTSTRAP] [debug] Got command of type ACTION
+> info: [debug] [BOOTSTRAP] [debug] Got command action: getDataDir
+> info: [debug] dataDir set to: /data
+> info: [debug] Pushing command to appium work queue: ["compressedLayoutHierarchy",{"compressLayout":false}]
+> info: [debug] [BOOTSTRAP] [debug] Returning result: {"value":"\/data","status":0}
+> info: [debug] [BOOTSTRAP] [debug] Got data from client: {"cmd":"action","action":"compressedLayoutHierarchy","params":{"compressLayout":false}}
+> info: [debug] [BOOTSTRAP] [debug] Got command of type ACTION
+> info: [debug] [BOOTSTRAP] [debug] Got command action: compressedLayoutHierarchy
+> info: [debug] [BOOTSTRAP] [debug] Returning result: {"value":false,"status":0}
+> info: [debug] Getting device API level
+> info: [debug] executing cmd: D:\program\android\sdk\platform-tools\adb.exe -s 03381818297500000000 shell "getprop ro.build.version.sdk"
+> info: [debug] Device is at API Level 19
+> info: [debug] executing cmd: D:\program\android\sdk\platform-tools\adb.exe -s 03381818297500000000 shell "am start -S -a android.intent.action.MAIN -c android.intent.category.LAUNCHER -f 0x10200000 -n us.originally.hoicard.debug/us.originally.hoicard.controllers.LandingActivity"
+> info: [debug] Waiting for pkg "us.originally.hoicard.debug" and activity "us.originally.hoicard.controllers.LandingActivity" to be focused
+> info: [debug] Getting focused package and activity
+> info: [debug] executing cmd: D:\program\android\sdk\platform-tools\adb.exe -s 03381818297500000000 shell "dumpsys window windows"
+> info: [debug] executing cmd: D:\program\android\sdk\platform-tools\adb.exe -s 03381818297500000000 shell "getprop ro.build.version.release"
+> info: [debug] Device is at release version 4.4.2
+> info: [debug] Device launched! Ready for commands
+> info: [debug] Setting command timeout to the default of 60 secs
+> info: [debug] Appium session started with sessionId b322923c-831c-4a38-9ff3-de1a474e269b
+> info: <-- POST /wd/hub/session 303 10805.275 ms - 74 
+> info: --> GET /wd/hub/session/b322923c-831c-4a38-9ff3-de1a474e269b {}
+> info: [debug] Responding to client with success: {"status":0,"value":{"platform":"LINUX","browserName":"Android","platformVersion":"4.4.2","webStorageEnabled":false,"takesScreenshot":true,"javascriptEnabled":true,"databaseEnabled":false,"networkConnectionEnabled":true,"locationContextEnabled":true,"warnings":{},"desired":{"javascriptEnabled":true,"locationContextEnabled":true,"handlesAlerts":true,"rotatable":true,"platformName":"android","deviceName":"cutepad TX_A7133_1508_","androidDeviceSerial":"03381818297500000000","requestOrigins":"{\"url\":\"http://webdriver.io\",\"version\":\"4.2.8\",\"name\":\"webdriverio\"}"},"handlesAlerts":true,"rotatable":true,"platformName":"android","deviceName":"03381818297500000000","androidDeviceSerial":"03381818297500000000","requestOrigins":"{\"url\":\"http://webdriver.io\",\"version\":\"4.2.8\",\"name\":\"webdriverio\"}"},"sessionId":"b322923c-831c-4a38-9ff3-de1a474e269b"}
+> info: <-- GET /wd/hub/session/b322923c-831c-4a38-9ff3-de1a474e269b 200 1.333 ms - 873 {"status":0,"value":{"platform":"LINUX","browserName":"Android","platformVersion":"4.4.2","webStorageEnabled":false,"takesScreenshot":true,"javascriptEnabled":true,"databaseEnabled":false,"networkConnectionEnabled":true,"locationContextEnabled":true,"warnings":{},"desired":{"javascriptEnabled":true,"locationContextEnabled":true,"handlesAlerts":true,"rotatable":true,"platformName":"android","deviceName":"cutepad TX_A7133_1508_","androidDeviceSerial":"03381818297500000000","requestOrigins":"{\"url\":\"http://webdriver.io\",\"version\":\"4.2.8\",\"name\":\"webdriverio\"}"},"handlesAlerts":true,"rotatable":true,"platformName":"android","deviceName":"03381818297500000000","androidDeviceSerial":"03381818297500000000","requestOrigins":"{\"url\":\"http://webdriver.io\",\"version\":\"4.2.8\",\"name\":\"webdriverio\"}"},"sessionId":"b322923c-831c-4a38-9ff3-de1a474e269b"}

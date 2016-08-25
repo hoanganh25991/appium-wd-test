@@ -1,0 +1,23 @@
+{
+  "name": "webdriverio-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "wd-test.js",
+  "dependencies": {
+    "chai": "^3.5.0",
+    "chai-as-promised": "^5.3.0",
+    "colors": "^1.1.2",
+    "underscore": "^1.8.3",
+    "wd": "^0.4.0",
+    "wdio-mocha-framework": "^0.4.0",
+    "webdriverio": "^4.2.8"
+  },
+  "devDependencies": {
+    "mocha": "^3.0.2"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "Anh Le Hoang",
+  "license": "MIT"
+}
