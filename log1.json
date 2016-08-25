@@ -1,0 +1,126 @@
+> info: [debug] Reading strings from converted strings.json
+> info: [debug] Setting language to default
+> info: [debug] executing cmd: D:\program\android\sdk\platform-tools\adb.exe -s 03381818297500000000 push "C:\\Users\\HOANGA~1\\AppData\\Local\\Temp\\us.originally.hoicard.debug\\strings.json" /data/local/tmp
+> info: [debug] Checking whether aapt is present
+> info: [debug] Using aapt from D:\program\android\sdk\build-tools\24.0.1\aapt.exe
+> info: [debug] Retrieving process from manifest.
+> info: [debug] executing cmd: D:\program\android\sdk\build-tools\24.0.1\aapt.exe dump xmltree D:\work-station\webdriverio-test\latest_staging.apk AndroidManifest.xml
+> info: [debug] Set app process to: us.originally.hoicard.debug
+> info: [debug] Not uninstalling app since server not started with --full-reset
+> info: [debug] Checking app cert for D:\work-station\webdriverio-test\latest_staging.apk.
+> info: [debug] executing cmd: java -jar D:\program\Appium\node_modules\appium\node_modules\appium-adb\jars\verify.jar D:\work-station\webdriverio-test\latest_staging.apk
+> info: [debug] App already signed.
+> info: [debug] Zip-aligning D:\work-station\webdriverio-test\latest_staging.apk
+> info: [debug] Checking whether zipalign is present
+> info: [debug] Using zipalign from D:\program\android\sdk\build-tools\24.0.1\zipalign.exe
+> info: [debug] Zip-aligning apk.
+> info: [debug] executing cmd: D:\program\android\sdk\build-tools\24.0.1\zipalign.exe -f 4 D:\work-station\webdriverio-test\latest_staging.apk C:\Users\HOANGA~1\AppData\Local\Temp\116725-2968-y4x5sq\appium.tmp
+> info: [debug] MD5 for app is 086866ab3d2f4208b858416bb6f66a1b
+> info: [debug] executing cmd: D:\program\android\sdk\platform-tools\adb.exe -s 03381818297500000000 shell "ls /data/local/tmp/086866ab3d2f4208b858416bb6f66a1b.apk"
+> info: [debug] Getting install status for us.originally.hoicard.debug
+> info: [debug] Getting device API level
+> info: [debug] executing cmd: D:\program\android\sdk\platform-tools\adb.exe -s 03381818297500000000 shell "getprop ro.build.version.sdk"
+> info: [debug] Device is at API Level 19
+> info: [debug] executing cmd: D:\program\android\sdk\platform-tools\adb.exe -s 03381818297500000000 shell "pm list packages -3 us.originally.hoicard.debug"
+> info: [debug] App is installed
+> info: [debug] Forwarding system:4724 to device:4724
+> info: [debug] executing cmd: D:\program\android\sdk\platform-tools\adb.exe -s 03381818297500000000 forward tcp:4724 tcp:4724
+> info: [debug] Pushing appium bootstrap to device...
+> info: [debug] executing cmd: D:\program\android\sdk\platform-tools\adb.exe -s 03381818297500000000 push "D:\\program\\Appium\\node_modules\\appium\\build\\android_bootstrap\\AppiumBootstrap.jar" /data/local/tmp/
+> info: [debug] Pushing settings apk to device...
+> info: [debug] executing cmd: D:\program\android\sdk\platform-tools\adb.exe -s 03381818297500000000 install "D:\program\Appium\node_modules\appium\build\settings_apk\settings_apk-debug.apk"
+> info: [debug] Pushing unlock helper app to device...
+> info: [debug] executing cmd: D:\program\android\sdk\platform-tools\adb.exe -s 03381818297500000000 install "D:\program\Appium\node_modules\appium\build\unlock_apk\unlock_apk-debug.apk"
+> info: Starting App
+> info: [debug] Attempting to kill all 'uiautomator' processes
+> info: [debug] Getting all processes with 'uiautomator'
+> info: [debug] executing cmd: D:\program\android\sdk\platform-tools\adb.exe -s 03381818297500000000 shell "ps 'uiautomator'"
+> info: [debug] No matching processes found
+> info: [debug] Running bootstrap
+> info: [debug] spawning: D:\program\android\sdk\platform-tools\adb.exe -s 03381818297500000000 shell uiautomator runtest AppiumBootstrap.jar -c io.appium.android.bootstrap.Bootstrap -e pkg us.originally.hoicard.debug -e disableAndroidWatchers false
+> info: [debug] [UIAUTOMATOR STDOUT] INSTRUMENTATION_STATUS: numtests=1
+> info: [debug] [UIAUTOMATOR STDOUT] INSTRUMENTATION_STATUS: stream=
+> info: [debug] [UIAUTOMATOR STDOUT] io.appium.android.bootstrap.Bootstrap:
+> info: [debug] [UIAUTOMATOR STDOUT] INSTRUMENTATION_STATUS: id=UiAutomatorTestRunner
+> info: [debug] [UIAUTOMATOR STDOUT] INSTRUMENTATION_STATUS: test=testRunServer
+> info: [debug] [UIAUTOMATOR STDOUT] INSTRUMENTATION_STATUS: class=io.appium.android.bootstrap.Bootstrap
+> info: [debug] [UIAUTOMATOR STDOUT] INSTRUMENTATION_STATUS: current=1
+> info: [debug] [UIAUTOMATOR STDOUT] INSTRUMENTATION_STATUS_CODE: 1
+> info: [debug] [BOOTSTRAP] [debug] Socket opened on port 4724
+> info: [debug] [BOOTSTRAP] [debug] Appium Socket Server Ready
+> info: [debug] [BOOTSTRAP] [debug] Loading json...
+> info: [debug] Waking up device if it's not alive
+> info: [debug] Pushing command to appium work queue: ["wake",{}]
+> info: [debug] [BOOTSTRAP] [debug] json loading complete.
+> info: [debug] [BOOTSTRAP] [debug] Registered crash watchers.
+> info: [debug] [BOOTSTRAP] [debug] Client connected
+> info: [debug] [BOOTSTRAP] [debug] Got data from client: {"cmd":"action","action":"wake","params":{}}
+> info: [debug] [BOOTSTRAP] [debug] Got command of type ACTION
+> info: [debug] [BOOTSTRAP] [debug] Got command action: wake
+> info: [debug] [BOOTSTRAP] [debug] Returning result: {"value":true,"status":0}
+> info: [debug] executing cmd: D:\program\android\sdk\platform-tools\adb.exe -s 03381818297500000000 shell "dumpsys window"
+> info: [debug] Screen already unlocked, continuing.
+> info: [debug] Pushing command to appium work queue: ["getDataDir",{}]
+> info: [debug] [BOOTSTRAP] [debug] Got data from client: {"cmd":"action","action":"getDataDir","params":{}}
+> info: [debug] [BOOTSTRAP] [debug] Got command of type ACTION
+> info: [debug] [BOOTSTRAP] [debug] Got command action: getDataDir
+> info: [debug] [BOOTSTRAP] [debug] Returning result: {"value":"\/data","status":0}
+> info: [debug] dataDir set to: /data
+> info: [debug] Pushing command to appium work queue: ["compressedLayoutHierarchy",{"compressLayout":false}]
+> info: [debug] [BOOTSTRAP] [debug] Got data from client: {"cmd":"action","action":"compressedLayoutHierarchy","params":{"compressLayout":false}}
+> info: [debug] [BOOTSTRAP] [debug] Got command of type ACTION
+> info: [debug] [BOOTSTRAP] [debug] Got command action: compressedLayoutHierarchy
+> info: [debug] [BOOTSTRAP] [debug] Returning result: {"value":false,"status":0}
+> info: [debug] Getting device API level
+> info: [debug] executing cmd: D:\program\android\sdk\platform-tools\adb.exe -s 03381818297500000000 shell "getprop ro.build.version.sdk"
+> info: [debug] Device is at API Level 19
+> info: [debug] executing cmd: D:\program\android\sdk\platform-tools\adb.exe -s 03381818297500000000 shell "am start -S -a android.intent.action.MAIN -c android.intent.category.LAUNCHER -f 0x10200000 -n us.originally.hoicard.debug/us.originally.hoicard.controllers.LandingActivity"
+> info: [debug] Waiting for pkg "us.originally.hoicard.debug" and activity "us.originally.hoicard.controllers.LandingActivity" to be focused
+> info: [debug] Getting focused package and activity
+> info: [debug] executing cmd: D:\program\android\sdk\platform-tools\adb.exe -s 03381818297500000000 shell "dumpsys window windows"
+> info: [debug] executing cmd: D:\program\android\sdk\platform-tools\adb.exe -s 03381818297500000000 shell "getprop ro.build.version.release"
+> info: [debug] Device is at release version 4.4.2
+> info: [debug] Device launched! Ready for commands
+> info: [debug] Setting command timeout to the default of 60 secs
+> info: [debug] Appium session started with sessionId 8bd7656e-c5af-4974-a746-52498ce2172e
+> info: <-- POST /wd/hub/session 303 11464.595 ms - 74 
+> info: --> GET /wd/hub/session/8bd7656e-c5af-4974-a746-52498ce2172e {}
+> info: [debug] Responding to client with success: {"status":0,"value":{"platform":"LINUX","browserName":"Android","platformVersion":"4.4.2","webStorageEnabled":false,"takesScreenshot":true,"javascriptEnabled":true,"databaseEnabled":false,"networkConnectionEnabled":true,"locationContextEnabled":true,"warnings":{},"desired":{"javascriptEnabled":true,"locationContextEnabled":true,"handlesAlerts":true,"rotatable":true,"platformName":"android","deviceName":"cutepad TX_A7133_1508_","androidDeviceSerial":"03381818297500000000","requestOrigins":"{\"url\":\"http://webdriver.io\",\"version\":\"4.2.8\",\"name\":\"webdriverio\"}"},"handlesAlerts":true,"rotatable":true,"platformName":"android","deviceName":"03381818297500000000","androidDeviceSerial":"03381818297500000000","requestOrigins":"{\"url\":\"http://webdriver.io\",\"version\":\"4.2.8\",\"name\":\"webdriverio\"}"},"sessionId":"8bd7656e-c5af-4974-a746-52498ce2172e"}
+> info: <-- GET /wd/hub/session/8bd7656e-c5af-4974-a746-52498ce2172e 200 1.656 ms - 873 {"status":0,"value":{"platform":"LINUX","browserName":"Android","platformVersion":"4.4.2","webStorageEnabled":false,"takesScreenshot":true,"javascriptEnabled":true,"databaseEnabled":false,"networkConnectionEnabled":true,"locationContextEnabled":true,"warnings":{},"desired":{"javascriptEnabled":true,"locationContextEnabled":true,"handlesAlerts":true,"rotatable":true,"platformName":"android","deviceName":"cutepad TX_A7133_1508_","androidDeviceSerial":"03381818297500000000","requestOrigins":"{\"url\":\"http://webdriver.io\",\"version\":\"4.2.8\",\"name\":\"webdriverio\"}"},"handlesAlerts":true,"rotatable":true,"platformName":"android","deviceName":"03381818297500000000","androidDeviceSerial":"03381818297500000000","requestOrigins":"{\"url\":\"http://webdriver.io\",\"version\":\"4.2.8\",\"name\":\"webdriverio\"}"},"sessionId":"8bd7656e-c5af-4974-a746-52498ce2172e"}
+> info: --> POST /wd/hub/session/8bd7656e-c5af-4974-a746-52498ce2172e/appium/device/open_notifications {}
+> info: [debug] Pushing command to appium work queue: ["openNotification"]
+> info: [debug] [BOOTSTRAP] [debug] Got data from client: {"cmd":"action","action":"openNotification","params":{}}
+> info: [debug] [BOOTSTRAP] [debug] Got command of type ACTION
+> info: [debug] [BOOTSTRAP] [debug] Got command action: openNotification
+> info: [debug] [BOOTSTRAP] [debug] Returning result: {"value":true,"status":0}
+> info: [debug] Responding to client with success: {"status":0,"value":true,"sessionId":"8bd7656e-c5af-4974-a746-52498ce2172e"}
+> info: <-- POST /wd/hub/session/8bd7656e-c5af-4974-a746-52498ce2172e/appium/device/open_notifications 200 22.153 ms - 76 {"status":0,"value":true,"sessionId":"8bd7656e-c5af-4974-a746-52498ce2172e"}
+> info: [debug] [BOOTSTRAP] [debug] Emitting system alert message
+> info: [debug] Emitting alert message...
+> info: [debug] Didn't get a new command in 60 secs, shutting down...
+> info: Shutting down appium session
+> info: [debug] Pressing the HOME button
+> info: [debug] executing cmd: D:\program\android\sdk\platform-tools\adb.exe -s 03381818297500000000 shell "input keyevent 3"
+> info: [debug] Stopping logcat capture
+> info: [debug] Logcat terminated with code null, signal SIGTERM
+> info: [debug] [BOOTSTRAP] [debug] Got data from client: {"cmd":"shutdown"}
+> info: [debug] [BOOTSTRAP] [debug] Got command of type SHUTDOWN
+> info: [debug] Sent shutdown command, waiting for UiAutomator to stop...
+> info: [debug] [BOOTSTRAP] [debug] Returning result: {"value":"OK, shutting down","status":0}
+> info: [debug] [BOOTSTRAP] [debug] Closed client connection
+> info: [debug] [UIAUTOMATOR STDOUT] INSTRUMENTATION_STATUS: numtests=1
+> info: [debug] [UIAUTOMATOR STDOUT] INSTRUMENTATION_STATUS: stream=.
+> info: [debug] [UIAUTOMATOR STDOUT] INSTRUMENTATION_STATUS: id=UiAutomatorTestRunner
+> info: [debug] [UIAUTOMATOR STDOUT] INSTRUMENTATION_STATUS: test=testRunServer
+> info: [debug] [UIAUTOMATOR STDOUT] INSTRUMENTATION_STATUS: class=io.appium.android.bootstrap.Bootstrap
+> info: [debug] [UIAUTOMATOR STDOUT] INSTRUMENTATION_STATUS: current=1
+> info: [debug] [UIAUTOMATOR STDOUT] INSTRUMENTATION_STATUS_CODE: 0
+> info: [debug] [UIAUTOMATOR STDOUT] INSTRUMENTATION_STATUS: stream=
+> info: [debug] [UIAUTOMATOR STDOUT] Test results for WatcherResultPrinter=.
+> info: [debug] [UIAUTOMATOR STDOUT] Time: 63.208
+> info: [debug] [UIAUTOMATOR STDOUT] OK (1 test)
+> info: [debug] [UIAUTOMATOR STDOUT] INSTRUMENTATION_STATUS_CODE: -1
+> info: [debug] UiAutomator shut down normally
+> info: [debug] Cleaning up android objects
+> info: [debug] Cleaning up appium session
+> info: [debug] We shut down because no new commands came in
