@@ -1,0 +1,117 @@
+> info: --> POST /wd/hub/session {"desiredCapabilities":{"javascriptEnabled":true,"locationContextEnabled":true,"handlesAlerts":true,"rotatable":true,"platformName":"android","deviceName":"cutepad TX_A7133_1508_","requestOrigins":{"url":"http://webdriver.io","version":"4.2.8","name":"webdriverio"}}}
+> info: Client User-Agent string: webdriverio/webdriverio/4.2.8
+> warn: Converting cap requestOrigins to string, since it was an object. This might be a user error. Original value was: {"url":"http://webdriver.io","version":"4.2.8","name":"webdriverio"}
+> info: [debug] The following desired capabilities were provided, but not recognized by appium. They will be passed on to any other services running on this server. : javascriptEnabled, locationContextEnabled, handlesAlerts, rotatable, requestOrigins
+> info: [debug] No appActivity desired capability or server param. Parsing from apk.
+> info: [debug] No appPackage desired capability or server param. Parsing from apk.
+> info: [debug] Using local app from command line: D:\work-station\webdriverio-test\latest_dev.apk
+> info: [debug] Creating new appium session 41e7a95d-49ff-4d4f-a055-f774f3051448
+> info: Starting android appium
+> info: [debug] Getting Java version
+> info: Java version is: 1.8.0_91
+> info: [debug] Checking whether adb is present
+> info: [debug] Using adb from D:\program\android\sdk\platform-tools\adb.exe
+> info: [debug] Parsing package and activity from app manifest
+> info: [debug] Checking whether aapt is present
+> info: [debug] Using aapt from D:\program\android\sdk\build-tools\24.0.1\aapt.exe
+> info: [debug] Extracting package and launch activity from manifest.
+> info: [debug] executing cmd: D:\program\android\sdk\build-tools\24.0.1\aapt.exe dump badging D:\work-station\webdriverio-test\latest_dev.apk
+> info: [debug] badging package: us.originally.hoicard.debug
+> info: [debug] badging act: us.originally.hoicard.controllers.LandingActivity
+> info: [debug] Parsed package and activity are: us.originally.hoicard.debug/us.originally.hoicard.controllers.LandingActivity
+> info: [debug] Using fast reset? true
+> info: [debug] Preparing device for session
+> info: [debug] Checking whether app is actually present
+> info: [debug] executing cmd: D:\program\android\sdk\platform-tools\adb.exe shell "getprop persist.sys.language"
+> error: Error getting device property persist.sys.language: Error: Command failed: C:\Windows\system32\cmd.exe /s /c "D:\program\android\sdk\platform-tools\adb.exe shell "getprop persist.sys.language""
+> error: more than one device/emulator
+> 
+> info: [debug] Sent shutdown command, waiting for UiAutomator to stop...
+> warn: UiAutomator did not shut down fast enough, calling it gone
+> info: [debug] Cleaning up android objects
+> info: [debug] Cleaning up appium session
+> error: Failed to start an Appium session, err was: Error: Command failed: C:\Windows\system32\cmd.exe /s /c "D:\program\android\sdk\platform-tools\adb.exe shell "getprop persist.sys.language""
+> error: more than one device/emulator
+> 
+> info: [debug] Error: Command failed: C:\Windows\system32\cmd.exe /s /c "D:\program\android\sdk\platform-tools\adb.exe shell "getprop persist.sys.language""
+> error: more than one device/emulator
+> 
+>     at ChildProcess.exithandler (child_process.js:751:12)
+>     at ChildProcess.emit (events.js:110:17)
+>     at maybeClose (child_process.js:1016:16)
+>     at Process.ChildProcess._handle.onexit (child_process.js:1088:5)
+> info: [debug] Responding to client with error: {"status":33,"value":{"message":"A new session could not be created. (Original error: Command failed: C:\\Windows\\system32\\cmd.exe /s /c \"D:\\program\\android\\sdk\\platform-tools\\adb.exe shell \"getprop persist.sys.language\"\"\nerror: more than one device/emulator\r\n)","killed":false,"code":1,"signal":null,"cmd":"C:\\Windows\\system32\\cmd.exe /s /c \"D:\\program\\android\\sdk\\platform-tools\\adb.exe shell \"getprop persist.sys.language\"\"","origValue":"Command failed: C:\\Windows\\system32\\cmd.exe /s /c \"D:\\program\\android\\sdk\\platform-tools\\adb.exe shell \"getprop persist.sys.language\"\"\nerror: more than one device/emulator\r\n"},"sessionId":null}
+> info: <-- POST /wd/hub/session 500 7540.251 ms - 675 
+> info: --> POST /wd/hub/session {"desiredCapabilities":{"app":"D:\\work-station\\webdriverio-test\\latest_dev.apk","platformName":"Android"}}
+> info: Client User-Agent string: undefined
+> info: [debug] Got configuration error, not starting session
+> error: The following desired capabilities are required, but were not provided: deviceName
+> info: [debug] Cleaning up appium session
+> error: Failed to start an Appium session, err was: Error: The following desired capabilities are required, but were not provided: deviceName
+> info: [debug] Error: The following desired capabilities are required, but were not provided: deviceName
+>     at [object Object].Capabilities.checkValidity (D:\program\Appium\node_modules\appium\lib\server\capabilities.js:146:13)
+>     at [object Object].Appium.configure (D:\program\Appium\node_modules\appium\lib\appium.js:238:35)
+>     at [object Object].<anonymous> (D:\program\Appium\node_modules\appium\lib\appium.js:118:10)
+>     at [object Object].Appium.start (D:\program\Appium\node_modules\appium\lib\appium.js:129:5)
+>     at exports.createSession (D:\program\Appium\node_modules\appium\lib\server\controller.js:188:16)
+>     at Layer.handle [as handle_request] (D:\program\Appium\node_modules\appium\node_modules\express\lib\router\layer.js:82:5)
+>     at next (D:\program\Appium\node_modules\appium\node_modules\express\lib\router\route.js:110:13)
+>     at Route.dispatch (D:\program\Appium\node_modules\appium\node_modules\express\lib\router\route.js:91:3)
+>     at Layer.handle [as handle_request] (D:\program\Appium\node_modules\appium\node_modules\express\lib\router\layer.js:82:5)
+>     at D:\program\Appium\node_modules\appium\node_modules\express\lib\router\index.js:267:22
+>     at Function.proto.process_params (D:\program\Appium\node_modules\appium\node_modules\express\lib\router\index.js:321:12)
+>     at next (D:\program\Appium\node_modules\appium\node_modules\express\lib\router\index.js:261:10)
+>     at next (D:\program\Appium\node_modules\appium\node_modules\express\lib\router\route.js:100:14)
+>     at next (D:\program\Appium\node_modules\appium\node_modules\express\lib\router\route.js:104:14)
+>     at next (D:\program\Appium\node_modules\appium\node_modules\express\lib\router\route.js:104:14)
+>     at next (D:\program\Appium\node_modules\appium\node_modules\express\lib\router\route.js:104:14)
+>     at next (D:\program\Appium\node_modules\appium\node_modules\express\lib\router\route.js:104:14)
+>     at next (D:\program\Appium\node_modules\appium\node_modules\express\lib\router\route.js:104:14)
+>     at next (D:\program\Appium\node_modules\appium\node_modules\express\lib\router\route.js:104:14)
+>     at next (D:\program\Appium\node_modules\appium\node_modules\express\lib\router\route.js:104:14)
+>     at next (D:\program\Appium\node_modules\appium\node_modules\express\lib\router\route.js:104:14)
+>     at next (D:\program\Appium\node_modules\appium\node_modules\express\lib\router\route.js:104:14)
+>     at next (D:\program\Appium\node_modules\appium\node_modules\express\lib\router\route.js:104:14)
+>     at D:\program\Appium\node_modules\appium\lib\server\controller.js:39:7
+>     at Layer.handle [as handle_request] (D:\program\Appium\node_modules\appium\node_modules\express\lib\router\layer.js:82:5)
+>     at next (D:\program\Appium\node_modules\appium\node_modules\express\lib\router\route.js:110:13)
+>     at next (D:\program\Appium\node_modules\appium\node_modules\express\lib\router\route.js:104:14)
+>     at next (D:\program\Appium\node_modules\appium\node_modules\express\lib\router\route.js:104:14)
+>     at next (D:\program\Appium\node_modules\appium\node_modules\express\lib\router\route.js:104:14)
+>     at next (D:\program\Appium\node_modules\appium\node_modules\express\lib\router\route.js:104:14)
+>     at next (D:\program\Appium\node_modules\appium\node_modules\express\lib\router\route.js:104:14)
+>     at next (D:\program\Appium\node_modules\appium\node_modules\express\lib\router\route.js:104:14)
+>     at next (D:\program\Appium\node_modules\appium\node_modules\express\lib\router\route.js:104:14)
+>     at next (D:\program\Appium\node_modules\appium\node_modules\express\lib\router\route.js:104:14)
+>     at next (D:\program\Appium\node_modules\appium\node_modules\express\lib\router\route.js:104:14)
+>     at next (D:\program\Appium\node_modules\appium\node_modules\express\lib\router\route.js:104:14)
+>     at next (D:\program\Appium\node_modules\appium\node_modules\express\lib\router\route.js:104:14)
+>     at next (D:\program\Appium\node_modules\appium\node_modules\express\lib\router\route.js:104:14)
+>     at next (D:\program\Appium\node_modules\appium\node_modules\express\lib\router\route.js:104:14)
+>     at next (D:\program\Appium\node_modules\appium\node_modules\express\lib\router\route.js:104:14)
+>     at next (D:\program\Appium\node_modules\appium\node_modules\express\lib\router\route.js:104:14)
+>     at Route.dispatch (D:\program\Appium\node_modules\appium\node_modules\express\lib\router\route.js:91:3)
+>     at Layer.handle [as handle_request] (D:\program\Appium\node_modules\appium\node_modules\express\lib\router\layer.js:82:5)
+>     at D:\program\Appium\node_modules\appium\node_modules\express\lib\router\index.js:267:22
+>     at Function.proto.process_params (D:\program\Appium\node_modules\appium\node_modules\express\lib\router\index.js:321:12)
+>     at next (D:\program\Appium\node_modules\appium\node_modules\express\lib\router\index.js:261:10)
+>     at methodOverride (D:\program\Appium\node_modules\appium\node_modules\method-override\index.js:79:5)
+>     at Layer.handle [as handle_request] (D:\program\Appium\node_modules\appium\node_modules\express\lib\router\layer.js:82:5)
+>     at trim_prefix (D:\program\Appium\node_modules\appium\node_modules\express\lib\router\index.js:302:13)
+>     at D:\program\Appium\node_modules\appium\node_modules\express\lib\router\index.js:270:7
+>     at Function.proto.process_params (D:\program\Appium\node_modules\appium\node_modules\express\lib\router\index.js:321:12)
+>     at next (D:\program\Appium\node_modules\appium\node_modules\express\lib\router\index.js:261:10)
+>     at logger (D:\program\Appium\node_modules\appium\node_modules\morgan\index.js:136:5)
+>     at Layer.handle [as handle_request] (D:\program\Appium\node_modules\appium\node_modules\express\lib\router\layer.js:82:5)
+>     at trim_prefix (D:\program\Appium\node_modules\appium\node_modules\express\lib\router\index.js:302:13)
+>     at D:\program\Appium\node_modules\appium\node_modules\express\lib\router\index.js:270:7
+>     at Function.proto.process_params (D:\program\Appium\node_modules\appium\node_modules\express\lib\router\index.js:321:12)
+>     at next (D:\program\Appium\node_modules\appium\node_modules\express\lib\router\index.js:261:10)
+>     at D:\program\Appium\node_modules\appium\node_modules\body-parser\lib\read.js:111:5
+>     at done (D:\program\Appium\node_modules\appium\node_modules\body-parser\node_modules\raw-body\index.js:248:14)
+>     at IncomingMessage.onEnd (D:\program\Appium\node_modules\appium\node_modules\body-parser\node_modules\raw-body\index.js:294:7)
+>     at IncomingMessage.g (events.js:199:16)
+>     at IncomingMessage.emit (events.js:104:17)
+>     at _stream_readable.js:908:16
+> info: [debug] Responding to client with error: {"status":33,"value":{"message":"A new session could not be created. (Original error: The following desired capabilities are required, but were not provided: deviceName)","origValue":"The following desired capabilities are required, but were not provided: deviceName"},"sessionId":null}
+> info: <-- POST /wd/hub/session 500 87.476 ms - 286 
