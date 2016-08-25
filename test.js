@@ -36,20 +36,13 @@ client
 	// .launch()
 	// .end()
 	// .openNotifications()
-	.isAppInstalled('us.originally.hoicard.debug')
-	.rotate(114, 198)
+	// .isAppInstalled('us.originally.hoicard.debug')
+	// .rotate(114, 198)
+	// .touchClick({})
 	// .performTouchAction(TouchAction().press(el0).moveTo(el1).release())
 	// .execute('mobile: tap', [], function(err){console.log(err);})
 	// .currentActivity().then(function() {
 	// 	console.log(activity); // returns android activity information
 	// })
-	.getCurrentDeviceActivity()
-	.then(function(activity) {
-	    console.log(activity); // returns ".MainActivity"
-	})
-	.selectByVisibleText('*', 'Ling (mgr)')
-	.getText('*')
-	.then(function(value){
-		console.log(value)
-	})
+	.closeApp()
 	;

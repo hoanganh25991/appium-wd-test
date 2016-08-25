@@ -1,0 +1,1 @@
+info: <-- POST /wd/hub/session/08197b01-2365-46e8-975f-9f8d75e78ea9/appium/app/close 200 1082.707 ms - 159 {"status":0,"value":"Successfully closed the [D:\\work-station\\webdriverio-test\\latest_staging.apk] app.","sessionId":"08197b01-2365-46e8-975f-9f8d75e78ea9"}
