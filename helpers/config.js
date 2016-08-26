@@ -4,9 +4,20 @@ var parseColumns = require('parse-columns');
 
 var isWindows = process.platform == 'win32';
 
+var cwd = process.cwd();
+
+cwd = cwd.replace('helpers', '');
+
+// console.log(cwd);
+
+var appPathOnMac = cwd + '/app/build/outputs/apk/app-prod-debug.apk';
+
+// console.log('appPathOnMac: ', appPathOnMac);
+
 var appPath = isWindows ?
 				'https://rightfrom.us/beta/app-folder/hoipos/beta/latest_staging.apk' :
-				'/Users/torin/.jenkins/jobs/hoipos-android/lastSuccessful/archive/app/build/outputs/apk/app-prod-debug.apk';
+				appPathOnMac;
+console.log('appPath: ', appPath);
 
 var handle = function(stdout){
 	var devicesInfo = parseColumns(stdout);
@@ -18,7 +29,7 @@ var handle = function(stdout){
 		var info = deviceInfo['List of devices attached'];
 
 		var arr = info.split(/\s+/);
-		console.log(arr);
+		// console.log(arr);
 		//on windows @@
 		// [ '03381818297500000000',
 		//   'device',
