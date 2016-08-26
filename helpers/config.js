@@ -2,8 +2,6 @@
 var exec = require('child_process').execSync;
 var parseColumns = require('parse-columns');
 
-var os = process.platform;
-
 var isWindows = process.platform == 'win32';
 
 var appPath = isWindows ?
@@ -21,19 +19,40 @@ var handle = function(stdout){
 
 		var arr = info.split(/\s+/);
 		console.log(arr);
+		//on windows @@
 		// [ '03381818297500000000',
 		//   'device',
 		//   'product:astar_inet',
 		//   'model:cutepad_TX_A7133_1508_',
 		//   'device:astar-inet' ]
 
+		//on MAC @@ %$%^%
+		// [ '03381818297500000000',
+		// 	'device',
+		// 	'usb:337838080X',
+		// 	'product:astar_inet',
+		// 	'model:cutepad_TX_A7133_1508_',
+		// 	'device:astar-inet' ]
+
 		var tmp = {};
 
 		tmp.platformName = 'android';
 
-		tmp.deviceName = arr[3].replace('model:', '');
+		//detect number, so it is device-serial
+		//detect model, to get device-name
+		arr.forEach(function(x){
+			if(!isNaN(x)){
+				tmp.androidDeviceSerial = x;
+			}
 
-		tmp.androidDeviceSerial = arr[0];
+			if(x.includes('model:')){
+				tmp.deviceName = x.replace('model:', '');
+			}
+		});
+
+		// tmp.deviceName = arr[3].replace('model:', '');
+		//
+		// tmp.androidDeviceSerial = arr[0];
 
 		tmp.app = appPath;
 
