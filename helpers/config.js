@@ -36,3 +36,5 @@ var a = exec("adb devices -l");
 var devices = handle(a.toString());
 
 console.log(devices);
+
+module.exports = devices;
