@@ -1,29 +1,19 @@
 'use strict';
 
-require('./helpers/setup');
-
-
 var wd = require('wd'),
-	_ = require('underscore'),
 	actions = require('./helpers/actions'),
 	serverConfigs = require('./helpers/appium-servers'),
-	_p = require('./helpers/promise-utils'),
-	Q = require('q'),
-	asserters = wd.asserters;
+	asserters = wd.asserters,
+	colors = require('colors'),
+	chai = require("chai"),
+	chaiAsPromised = require("chai-as-promised"),
+	should = chai.should();
+
+chai.use(chaiAsPromised);
+
+chaiAsPromised.transferPromiseness = wd.transferPromiseness;
 
 wd.addPromiseChainMethod('swipe', actions.swipe);
-
-// var dummyAction = function(){
-// 	var action = new wd.TouchAction(this);
-//
-// 	action
-// 		.press({x: 15, y: 15})
-// 		.wait(300)
-// 		.moveTo({x: 45, y: 45})
-// 		.release();
-//
-// 	return action.perform();
-// };
 
 wd.addPromiseChainMethod('dummyAction', actions.dummyAction);
 
@@ -39,56 +29,46 @@ describe('test on pos.hoicard', function(){
 
 		driver = wd.promiseChainRemote(serverConfig);
 
-		require('./helpers/logging').configure(driver);
+		driver.on('status', function(info){
+			console.log(info.cyan);
+		});
 
-		var desired = _.clone(require('./helpers/caps').android19);
+		driver.on('command', function(meth, path, data){
+			console.log(' > ' + meth.yellow, path.grey, data || '');
+		});
 
-		desired.app = 'https://rightfrom.us/beta/app-folder/hoipos/beta/latest_staging.apk';
+		driver.on('http', function(meth, path, data){
+			console.log(' > ' + meth.magenta, path, (data || '').grey);
+		});
 
-		return driver
-			.init(desired)
-			// .setImplicitWaitTimeout(5000)
-			;
+		var desired = {
+			platformName: 'android',
+			deviceName: 'cutepad TX_A7133_1508_',
+			app: 'D:/work-station/appium-wd-test/apk-file/latest_staging.apk'
+		};
+
+		return driver.init(desired);
 	});
 
 	after(function(){
 		return driver
-			.quit()
-			.finally(function(){
-				console.log('congratulation, test done');
-			});
+			.quit();
 	});
 
 	afterEach(function(){
 		allPassed = allPassed && this.currentTest.state === 'passed';
 	});
 
-	it('should find an element', function(){
+	it('should load data', function(){
 		return driver
-			// .sleep(20000) //app loading data, quite long, has check for 10000|15000
-			// .dummyAction()
-			.waitForElement('name', 'Ling (mgr)', 35000)
-			// .click()
-			// .waitForElement('name', ' Open Drawer', 4500) // Open Drawer
-			// .elementByName(' Take Away') // Take Away
-			// .elementByName(' Edit Layout') // Edit Layout
-			// .elementByName('T19')
-			// .click()
-			// .waitForElement('name', 'Cancel', 4500)
-			// .click()
-			// .sleep(500)
-			// .elementByName(' Edit Layout') // Edit Layout
-			// .click()
-			// .sleep(4000)
-			// .elementByName('+ Add Table') //+ Add Table|us.originally.hoicard.debug:id/btn_add_table
-			// .excute({"cmd": "click", "elementId": "8"})
-			// .click()
-			// .waitForElement('name', 'Ok', 500)
-			// .keys(['hello anh Torin'])
-			// .elementByName('Ok')
-			// .click()
-			// .waitForElement('name', 'hello anh Torin1', 4500)
-			// .sleep(1000)
+			.waitForElement(
+				'id',
+				'us.originally.hoicard.debug:id/txt_loading_status',
+				5000
+			)
+			.text().should.become(' Retrieving outlet data...')
 			;
 	});
+
+	it('')
 });
