@@ -7,8 +7,10 @@ var wd = require('wd'),
 	_ = require('underscore'),
 	actions = require('./helpers/actions'),
 	serverConfigs = require('./helpers/appium-servers'),
+	// serverConfigs = require('./helpers/appium-servers-emu'),
 	_p = require('./helpers/promise-utils'),
-	Q = require('q');
+	Q = require('q'),
+	endVar;
 
 var asserters = wd.asserters;
 
