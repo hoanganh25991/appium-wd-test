@@ -12,11 +12,15 @@ var wd = require('wd'),
 wd.addPromiseChainMethod('swipe', actions.swipe);
 
 var dummyAction = function(count) {
+	console.log('driver.dummyAction');
+  	
   	var action = new wd.TouchAction(this);
 
   	var c = count? count : 1;
 
-	while(count > 0){
+  	console.log('dummyAction count: ', c);
+
+	while(c > 0){
 		action
 			.press({x: 15, y: 15})
 			.wait(3000)
@@ -76,7 +80,7 @@ describe('test on pos.hoicard', function(){
 		// 	var c = count ? count : 1;
 		// 	while(c > 0){
 		// 		driver
-		// 			.execute("mobile: scroll", [{direction: 'down'}])
+		// 			.execute('mobile: scroll', [{direction: 'down'}])
 		// 			.sleep(3000)
 		// 		c--;
 		// 	}
@@ -108,9 +112,10 @@ describe('test on pos.hoicard', function(){
 			// .elementByName('+ Add Table')
 			.waitForElement('name', '+ Add Table', function(){
 				// driver
-				// 	.execute("mobile: scroll", [{direction: 'down'}])
+				// 	.execute('mobile: scroll', [{direction: 'down'}])
 				// 	.sleep(3000);
-				driver.dummyAction();
+				driver.dummyAction(1);
+
 				return false;
 			}, 8000)
 			.should.eventually.exist
