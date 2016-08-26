@@ -6,7 +6,7 @@ var isWindows = process.platform == 'win32';
 
 var appPath = isWindows ?
 				'https://rightfrom.us/beta/app-folder/hoipos/beta/latest_staging.apk' :
-				'Users/torin/.jenkins/jobs/hoipos-android/lastSuccessful/archive/app/build/outputs/apk/app-prod-debug.apk';
+				'/Users/torin/.jenkins/jobs/hoipos-android/lastSuccessful/archive/app/build/outputs/apk/app-prod-debug.apk';
 
 var handle = function(stdout){
 	var devicesInfo = parseColumns(stdout);
