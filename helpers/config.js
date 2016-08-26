@@ -10,7 +10,8 @@ cwd = cwd.replace('helpers', '');
 
 // console.log(cwd);
 
-var appPathOnMac = cwd + '/app/build/outputs/apk/app-prod-debug.apk';
+// var appPathOnMac = cwd + '/app/build/outputs/apk/app-prod-debug.apk';
+var appPathOnMac = '/Users/torin/.jenkins/jobs/hoipos-android/lastSuccessful/archive/app/build/outputs/apk/app-prod-debug.apk';;
 
 // console.log('appPathOnMac: ', appPathOnMac);
 
