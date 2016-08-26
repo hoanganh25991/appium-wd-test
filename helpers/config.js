@@ -20,6 +20,7 @@ var handle = function(stdout){
 		var info = deviceInfo['List of devices attached'];
 
 		var arr = info.split(/\s+/);
+		console.log(arr);
 		// [ '03381818297500000000',
 		//   'device',
 		//   'product:astar_inet',
