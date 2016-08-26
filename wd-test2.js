@@ -25,7 +25,7 @@ describe("test on pos.hoicard", function(){
 		var desired = process.env.npm_package_config_sauce ?
 			_.clone(require("./helpers/caps").android18) :
 			_.clone(require("./helpers/caps").android19);
-		desired.app = 'https://rightfrom.us/beta/app-folder/hoipos/beta/latest_staging.apk';
+		desired.app = 'D:/work-station/web-driver-test-device/apk-file/latest_staging.apk';
 		if(process.env.npm_package_config_sauce){
 			desired.name = 'android - complex';
 			desired.tags = ['sample'];
@@ -51,11 +51,11 @@ describe("test on pos.hoicard", function(){
 
 	it("should find an element", function(){
 		return driver
-			.sleep(20000) //app loading data, quite long, has check for 10000
+			.sleep(17000) //app loading data, quite long, has check for 10000
 			// .elementByName('Start activity')
 			.elementByName('Ling (mgr)')
 			.click()
-			.sleep(4000) //long load
+			.sleep(4500) //long load
 			.elementByName(' Open Drawer') // Open Drawer
 			.elementByName(' Take Away') // Take Away
 			.elementByName(' Edit Layout') // Edit Layout
@@ -68,7 +68,7 @@ describe("test on pos.hoicard", function(){
 			.elementByName(' Edit Layout') // Edit Layout
 			.click()
 			.sleep(4000) //long load
-			.elementByName('+')
+			.elementByName('+ Add Table')
 			.click()
 			.sleep(3000)
 			.elementByAccessibilityId('us.originally.hoicard.debug:id/et_password')
