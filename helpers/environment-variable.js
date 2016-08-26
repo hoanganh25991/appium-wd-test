@@ -1,3 +1,8 @@
+packageName="us.originally.hoicard"
+apkName="app-prod-debug.apk"
+artifactPath="app/build/outputs/apk/" ///http://192.168.1.100:8080/job/hoipos-android/lastSuccessfulBuild/artifact/
+
+
 export PATH=$ANDROID_HOME/platform-tools:$PATH
 export PATH=$ANDROID_HOME/tools:$PATH
 
@@ -9,6 +14,7 @@ echo ${PATH}
 packageName="us.originally.hoicard"
 apkName="app-release.apk"
 artifactPath="app/build/outputs/apk/"
+
 
 deviceIds=( $(adb devices | grep -o '\b[a-f0-9]\+\b') )
 numDevices=${#deviceIds[@]}
