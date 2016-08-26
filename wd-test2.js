@@ -47,7 +47,9 @@ describe('test on pos.hoicard', function(){
 			app: 'D:/work-station/appium-wd-test/apk-file/latest_staging.apk'
 		};
 
-		return driver.init(desired);
+		return driver
+			.init(desired)
+			.setImplicitWaitTimeout(5000);
 	});
 
 	after(function(){
@@ -61,14 +63,69 @@ describe('test on pos.hoicard', function(){
 
 	it('should load data', function(){
 		return driver
-			.waitForElement(
-				'id',
-				'us.originally.hoicard.debug:id/txt_loading_status',
-				5000
-			)
-			.text().should.become(' Retrieving outlet data...')
+		// .waitForElement(
+		// 	'id',
+		// 	'us.originally.hoicard.debug:id/txt_loading_status',
+		// 	5000 //if wait not long enough, status: Check license,...
+		// )
+		// .text().should.become(' Retrieving outlet data...')
+		// ;
+		// .waitForElement(
+		// 	'name',
+		// 	' Retrieving outlet data...',
+		// 	5000 //if wait not long enough, status: Check license,...
+		// )
+			.waitForElementByName(' Retrieving outlet data...', 5000)
 			;
 	});
 
-	it('')
+	it('should has Ling (mgr)', function(){
+		return driver
+			.waitForElement(
+				'name',
+				'Ling (mgr)'
+			)
+			// .text().should.become('Ling (mgr)')
+			// .elementByName('Ling (mgr)')
+			.click()
+			.sleep(3000)
+			;
+	});
+
+	it('should see dashboard', function(){
+		return driver
+			.elementByName(' Open Drawer') // Open Drawer
+			.should.eventually.exist
+			.elementByName(' Take Away') // Take Away
+			.should.eventually.exist
+			.elementByName(' Edit Layout') // Edit Layout
+			.should.eventually.exist
+			.click()
+			.sleep(3000)
+			;
+	});
+
+	it('should add table', function(){
+		return driver
+			.elementByName('+ Add Table')
+			.click()
+			.waitForElement('name', 'Ok', 500)
+			.keys(['hello anh Torin'])
+			.elementByName('Ok')
+			.click()
+			.waitForElement(
+				'name',
+				'hello anh Torin1',
+				4500
+			);
+	});
+
+	it('should delete table', function(){
+		return driver
+			.elementByName('Delete')
+			.click()
+			.elementByName('Ok')
+			.click()
+			;
+	});
 });
