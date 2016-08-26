@@ -1,7 +1,7 @@
 packageName="us.originally.hoicard"
 apkName="app-prod-debug.apk"
 artifactPath="app/build/outputs/apk/" ///http://192.168.1.100:8080/job/hoipos-android/lastSuccessfulBuild/artifact/
-
+root + artifactPath + apkName = http://192.168.1.100:8080/job/hoipos-android/lastSuccessfulBuild/artifact/app/build/outputs/apk/app-prod-debug.apk
 
 export PATH=$ANDROID_HOME/platform-tools:$PATH
 export PATH=$ANDROID_HOME/tools:$PATH

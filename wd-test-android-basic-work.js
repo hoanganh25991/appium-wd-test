@@ -3,10 +3,11 @@
 var testAndroidBasicWork = function(desiredCapabilities){
 	var wd = require('wd'),
 		// actions = require('./helpers/actions'),
-		serverConfigs = {
-		  host: 'localhost',
-		  port: 4723,
-		  desiredCapabilities: desiredCapabilities,
+		serverConfig = {
+			host: 'localhost',
+			port: 4723,
+			desiredCapabilities: desiredCapabilities
+		},
 		asserters = wd.asserters,
 		colors = require('colors'),
 		chai = require("chai"),
@@ -29,8 +30,6 @@ var testAndroidBasicWork = function(desiredCapabilities){
 		var allPassed = true;
 
 		before(function(){
-			var serverConfig = serverConfigs.local;
-
 			driver = wd.promiseChainRemote(serverConfig);
 
 			driver.on('status', function(info){
@@ -45,11 +44,7 @@ var testAndroidBasicWork = function(desiredCapabilities){
 				console.log(' > ' + meth.magenta, path, (data || '').grey);
 			});
 
-			var desired = {
-				platformName: 'android',
-				deviceName: 'cutepad TX_A7133_1508_',
-				app: 'D:/work-station/appium-wd-test/apk-file/latest_staging.apk'
-			};
+			var desired = serverConfig.desiredCapabilities;
 
 			return driver
 				.init(desired)
