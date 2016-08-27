@@ -26,8 +26,12 @@ var options = {
 //     ]
 // };
 
-var sendNotification = function(attachments){
+var sendNotification = function(attachments, url){
+	var urlX = (url == 'a.torin') ? 
+						'https://loremipsum.slack.com/services/hooks/incoming-webhook?token=37rlKOfjRpEoZ' :
+						'https://hooks.slack.com/services/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'
 	options.body = JSON.stringify(attachments);
+	options.url = urlX;
 	request(options);
 };
 
