@@ -87,7 +87,7 @@ mocha.run()
 
 		var sendNotification = require('./helpers/slack');	
 
-		sendNotification(attachments);
+		sendNotification(attachments, 'a.torin');
 
     })
     .on('exit', function(failures){

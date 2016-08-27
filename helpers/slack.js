@@ -8,6 +8,10 @@ var options = {
 	body: ''
 };
 
+/**
+ * samle of attachments
+ */
+
 // var attachments = {
 //     "attachments": [
 //         {
@@ -32,6 +36,7 @@ var sendNotification = function(attachments, url){
 						'https://hooks.slack.com/services/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'
 	options.body = JSON.stringify(attachments);
 	options.url = urlX;
+	// console.log(options);
 	request(options);
 };
 
