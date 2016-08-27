@@ -1,7 +1,9 @@
 var util = require('util');
 // var base = require('mocha/lib/reporters/base.js');
 
-var sendNotification = require('./helpers/slack');
+// var sendNotification = require('./helpers/slack');
+
+var request = require("request");
 
 process.log = {
 	status: false,
@@ -28,6 +30,15 @@ var tiReporter = function (runner){
 		var isAllPassed = passes == (passes + failures);
 
 		process.log.status = isAllPassed;
+
+
+		var options = {
+			method: 'POST',
+			// url: 'https://loremipsum.slack.com/services/hooks/incoming-webhook?token=37rlKOfjRpEoZ',
+			url: 'https://hooks.slack.com/services/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',
+			//test on my slac "redoc.slack"
+			body: ''
+		};
 
 		var attachmentTxt = "<https://github.com/hoanganh25991/appium-wd-test/blob/master/wd-test-android-basic-work.js|test on pos.hoicard>";
 
@@ -68,10 +79,19 @@ var tiReporter = function (runner){
 				}
 			]
 		};
+		options.body = JSON.stringify(attachments);
 
-		sendNotification(attachments);
+		console.log(options);
+
+		request(options, function (error, response, body) {
+			if (error) throw new Error(error);
+
+			console.log(body);
+		});
 		
 		console.log(process.log.content);
+
+		runner.log = process.log;
 		
 		process.exit(failures);
 	});

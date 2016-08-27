@@ -11,14 +11,14 @@ cwd = cwd.replace('helpers', '');
 // console.log(cwd);
 
 // var appPathOnMac = cwd + '/app/build/outputs/apk/app-prod-debug.apk';
-var appPathOnMac = '/Users/torin/.jenkins/jobs/hoipos-android/lastSuccessful/archive/app/build/outputs/apk/app-prod-debug.apk';;
+var appPathOnMac = '/Users/torin/.jenkins/jobs/hoipos-android/lastSuccessful/archive/app/build/outputs/apk/app-prod-debug.apk';
 
 // console.log('appPathOnMac: ', appPathOnMac);
 
 var appPath = isWindows ?
 				'https://rightfrom.us/beta/app-folder/hoipos/beta/latest_staging.apk' :
 				appPathOnMac;
-console.log('appPath: ', appPath);
+// console.log('appPath: ', appPath);
 
 var handle = function(stdout){
 	var devicesInfo = parseColumns(stdout);
@@ -79,7 +79,7 @@ var a = exec("adb devices -l");
 
 var devices = handle(a.toString());
 
-console.log('List of device: >>>\n');
+console.log('List of device:');
 
 console.log(devices);
 
