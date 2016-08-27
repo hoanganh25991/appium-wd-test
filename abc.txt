@@ -1,42 +1,22 @@
-
-> webdriverio-test@1.0.0 test d:\work-station\appium-wd-test
-> mocha "test.js"
-
 List of device:
 [ { platformName: 'android',
     androidDeviceSerial: '03381818297500000000',
     deviceName: 'cutepad_TX_A7133_1508_',
     app: 'https://rightfrom.us/beta/app-folder/hoipos/beta/latest_staging.apk' } ]
-
-
-  test on pos.hoicard
  > CALL init({"platformName":"android","androidDeviceSerial":"03381818297500000000","deviceName":"cutepad_TX_A7133_1508_","app":"https://rightfrom.us/beta/app-folder/hoipos/beta/latest_staging.apk"}) 
  > POST /session {"desiredCapabilities":{"platformName":"android","androidDeviceSerial":"03381818297500000000","deviceName":"cutepad_TX_A7133_1508_","app":"https://rightfrom.us/beta/app-folder/hoipos/beta/latest_staging.apk"}}
-    1) "before all" hook
  > CALL quit() 
  > DELETE /session 
 
 Ending your web drivage..
 
-    2) "after all" hook
+{ method: 'POST',
+  url: 'https://hooks.slack.com/services/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',
+  body: '{"attachments":[{"fallback":"test on pos.hoicard","text":"<https://github.com/hoanganh25991/appium-wd-test/blob/master/wd-test-android-basic-work.js|test on pos.hoicard>","fields":[{"title":"Console ouput","value":"fail: %s\\n-- error: %s\\n","short":true}],"color":"danger"}]}' }
+Fail: test on pos.hoicard "before all" hook
+-- error: [init({"platformName":"android","androidDeviceSerial":"03381818297500000000","deviceName":"cutepad_TX_A7133_1508_","app":"https://rightfrom.us/beta/app-folder/hoipos/beta/latest_staging.apk"})] connect ECONNREFUSED 127.0.0.1:4723
+Fail: test on pos.hoicard "after all" hook
+-- error: [quit()] connect ECONNREFUSED 127.0.0.1:4723
 
-
-  0 passing (2s)
-  2 failing
-
-  1) test on pos.hoicard "before all" hook:
-     [init({"platformName":"android","androidDeviceSerial":"03381818297500000000","deviceName":"cutepad_TX_A7133_1508_","app":"https://rightfrom.us/beta/app-folder/hoipos/beta/latest_staging.apk"})] connect ECONNREFUSED 127.0.0.1:4723
-  Error: connect ECONNREFUSED 127.0.0.1:4723
-      at Object.exports._errnoException (util.js:873:11)
-      at exports._exceptionWithHostPort (util.js:896:20)
-      at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1077:14)
-
-  2) test on pos.hoicard "after all" hook:
-     [quit()] connect ECONNREFUSED 127.0.0.1:4723
-  Error: connect ECONNREFUSED 127.0.0.1:4723
-      at Object.exports._errnoException (util.js:873:11)
-      at exports._exceptionWithHostPort (util.js:896:20)
-      at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1077:14)
-
-
+End: 0/2
 
