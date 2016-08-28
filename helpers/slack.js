@@ -9,38 +9,54 @@ var options = {
 };
 
 /**
- * samle of attachments
+ * samle of message
  */
 
-// var attachments = {
-//     "attachments": [
+// {
+// 	"text": "Jenskin console output",
+// 	"attachments": [
 //         {
-//             "fallback": "test on pos.hoicard",
-//             "text": "<https://github.com/hoanganh25991/appium-wd-test/blob/master/wd-test-android-basic-work.js|test on pos.hoicard>",
+//             "fallback": "ReferenceError - UI is not defined: https://honeybadger.io/path/to/event/",
+//             "text": "<https://honeybadger.io/path/to/event/|ReferenceError> - UI is not defined",
 //             "fields": [
 //                 {
-//                     "title": "Console ouput",
-//                     "value": "fail: %s\n-- error: %s\n",
+//                     "title": "Project",
+//                     "value": "Awesome Project",
+//                     "short": true
+//                 },
+//                 {
+//                     "title": "Environment",
+//                     "value": "production",
 //                     "short": true
 //                 }
 //             ],
-//             // "color": "good"
-//             "color": "danger"
+//             "color": "good"
+//             // "color": "warning"
 //         }
 //     ]
-// };
+// }
 
-var sendNotification = function(attachments, url){
-	var urlX = (url == 'a.torin') ? 
-						'https://loremipsum.slack.com/services/hooks/incoming-webhook?token=37rlKOfjRpEoZ' :
-						'https://hooks.slack.com/services/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'
-	options.body = JSON.stringify(attachments);
-	options.url = urlX;
-	// console.log(options);
+var sendNotification = function(message, url){
+	options.body = JSON.stringify(message);
+	
+	//change with isATorin
+	var isATorin = (url == 'a.torin');
+	
+	var urlX = isATorin ? 
+				'https://loremipsum.slack.com/services/hooks/incoming-webhook?token=37rlKOfjRpEoZFvmhVW7Dz7O':
+				'https://hooks.slack.com/services/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';
+
+	if(isATorin){
+		message.channel = '#notifications';
+		message.username = 'appium-test';
+		message.icon_url = 'http://rightfrom.us/auto_deploy_icon.png';
+		options.url = urlX;
+	}
+	console.log(JSON.stringify(message));
 	request(options);
 };
 
-// sendNotification(attachments);
+// sendNotification(message);
 
 module.exports = sendNotification;
 
